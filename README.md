@@ -23,4 +23,4 @@ Make sure you have Node.js and npm installed on your machine.
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/e-plantShopping.git](https://github.com/YOUR_USERNAME/e-plantShopping.git)
+   git clone https://github.com/suryawanshiram410-ui/e-plantShopping
