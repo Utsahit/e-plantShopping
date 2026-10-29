@@ -1,19 +1,34 @@
 import React, { useState } from 'react';
 import ProductList from './ProductList';
-import CartItem from './CartItem';
-import AboutUs from './AboutUs';
 import './App.css';
+import AboutUs from './AboutUs';
 
 function App() {
-  const [showCart, setShowCart] = useState(false);
+  const [showProductList, setShowProductList] = useState(false);
+
+  const handleGetStartedClick = () => {
+    setShowProductList(true);
+  };
 
   return (
     <div className="app-container">
-      {!showCart ? (
-        <ProductList onShowCart={() => setShowCart(true)} />
-      ) : (
-        <CartItem onContinueShopping={() => setShowCart(false)} />
-      )}
+      <div className={`landing-page ${showProductList ? 'fade-out' : ''}`}>
+        <div className="background-image"></div>
+        <div className="content">
+          <h1>Welcome To Paradise Nursery</h1>
+          <div className="divider"></div>
+          <p>Where Greenery Meets Serenity</p>
+          <button className="get-started-button" onClick={handleGetStartedClick}>
+            Get Started
+          </button>
+        </div>
+        <div className="aboutus_container">
+          <AboutUs />
+        </div>
+      </div>
+      <div className={`product-list-container ${showProductList ? 'visible' : ''}`}>
+        <ProductList />
+      </div>
     </div>
   );
 }
